@@ -4,6 +4,9 @@ class Monster {
         this.health = health;
         this.damage = damage;
     }
+    static receiveDamage(dmg){
+        
+    }
 }
 
 class MonsterLibrary{

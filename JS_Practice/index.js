@@ -4,20 +4,17 @@ const dragonMarker2 = document.getElementById("dragonMarker2");
 const playerOne = document.getElementById("playerOne");
 const playerTwo = document.getElementById("playerTwo");
 
-
-
 function createMonsterStatsUi(id){
     // Generate html stats here.
     const monsterDetails = MonsterLibrary.getMonsterDetails(id);
-    console.log(monsterDetails.name);
 
     const monsterName = document.getElementById("name").textContent = monsterDetails.name;
     const monsterHealth = document.getElementById("healthBarValue").textContent = monsterDetails.health;
-    const monsterdamage = document.getElementById("damage").textContent = monsterDetails.damage;
+    const monsterDamage = document.getElementById("damage").textContent = monsterDetails.damage;
 }
 
 function removeMonsterStatsUi(id){
-
+    
 }
 
 dragonMarker.addEventListener("markerFound", () => {
