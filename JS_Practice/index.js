@@ -8,9 +8,9 @@ function createMonsterStatsUi(id){
     // Generate html stats here.
     const monsterDetails = MonsterLibrary.getMonsterDetails(id);
 
-    const monsterName = document.getElementById("name").textContent = monsterDetails.name;
-    const monsterHealth = document.getElementById("healthBarValue").textContent = monsterDetails.health;
-    const monsterDamage = document.getElementById("damage").textContent = monsterDetails.damage;
+    const monsterName = document.querySelectorAll("#name_1, #name_2").textContent = monsterDetails.name;
+    const monsterHealth = document.querySelectorAll("#healthBarValue_1, #healthBarValue_2").textContent = monsterDetails.health;
+    const monsterDamage = document.querySelectorAll("#damage_1, #damage_2").textContent = monsterDetails.damage;
 }
 
 function removeMonsterStatsUi(id){

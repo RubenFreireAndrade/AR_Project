@@ -1,10 +1,6 @@
-function startGame(evnt) {
-    //const startButton = document.getElementById("gameBtn").textContent = "Button is working";
+const button = document.getElementById("boxBtn");
 
-    //console.log(evnt.touches);
-}
-
-const start = document.getElementById("body");
-
-start.addEventListener("click", startGame(start));
-start.addEventListener("touchstart", startGame(start));
+button.addEventListener("click", function isBoxClicked(){
+  button.setAttribute("visible", false);
+  console.log("StartBtn box was clicked!");
+})

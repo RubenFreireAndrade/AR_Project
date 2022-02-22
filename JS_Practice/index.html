@@ -7,8 +7,9 @@
   
 <body style="margin : 0px; overflow: hidden;">
 
-  <div id="body">
     <a-scene embedded arjs="sourceType: webcam;">
+      <a-box id="boxBtn" position="0 0 -2" rotation="0 0 0" color="#4CC3D9" scale="0.2 0.2 0.2"></a-box>
+        
       <a-assets timeout="30000">
         <a-asset-item id="dragon" src="https://cdn.glitch.me/a8542f6b-dbd1-4ba8-8adc-497920eabe18%2FDragon%202.5_fbx.obj?v=1639323928482"></a-asset-item>
       </a-assets>
@@ -21,26 +22,31 @@
         <a-obj-model src="#dragon" position="0 0 0" scale="0.01 0.01 0.01" rotation="0 0 0"></a-obj-model>
       </a-marker>
   
-      <a-camera position="0 0 0"></a-camera>
+      <a-camera position="0 0 0">
+        <a-cursor></a-cursor>
+      </a-camera>
     </a-scene>
-  
+  <!---------------------- Player One Stats ----------------------------->
     <div id="UI">
-      <button id="startBtn">Start Game</button>
       <div class="playerOneStatusBar" id="playerOne" hidden>
-        
-      </div>
-  
-      <div class="playerTwoStatusBar" id="playerTwo" hidden>
-        <div id="name"></div>
-        <div id="healthBarContainer">
-          <div id="healthBarValue"></div>
-          <div id="healthBarFill"></div>
+        <div id="name_1"></div>
+        <div id="healthBarContainer_1">
+          <div id="healthBarValue_1"></div>
+          <div id="healthBarFill_1"></div>
         </div>
-        <div id="damage"></div>
+        <div id="damage_1"></div>
       </div>
-      
+  <!---------------------- Player Two Stats ----------------------------->
+      <div class="playerTwoStatusBar" id="playerTwo" hidden>
+        <div id="name_2"></div>
+        <div id="healthBarContainer_2">
+          <div id="healthBarValue_2"></div>
+          <div id="healthBarFill_2"></div>
+        </div>
+        <div id="damage_2"></div>
+      </div>
     </div>
-  </div>
+  
   <script src="monsters.js"></script>
   <script src="index.js"></script>
   <script src="startgame.js"></script>
