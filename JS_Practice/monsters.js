@@ -1,18 +1,16 @@
 class Monster {
-    constructor(name, health, damage){
+    constructor(name, health, damage, model){
         this.name = name;
         this.health = health;
         this.damage = damage;
-    }
-    static receiveDamage(dmg){
-        
+        this.model = model;
     }
 }
 
 class MonsterLibrary{
     static library = {
-        dragon: new Monster("Dragon", 100, 10),
-        dragon2: new Monster("Dragon2", 200, 30)
+        dragon: new Monster("Dragon", 100, 10, "#dragon"),
+        dragon2: new Monster("Dragon2", 200, 30, "#dragon")
     }
 
     static getMonsterDetails(id) {

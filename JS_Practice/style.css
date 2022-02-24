@@ -10,17 +10,16 @@
     pointer-events: none;
 }
 
-.playerOneStatusBar {
+#UI .pointerEnabled {
+    pointer-events: all;
+}
+
+.playerStatusBar {
     font-family: Impact, Haettenschweiler, sans-serif;
     color: white;
 }
 
-.playerTwoStatusBar{
-    font-family: Impact, Haettenschweiler, sans-serif;
-    color: white;
-}
-
-#healthBarContainer_1, #healthBarContainer_2{
+.healthBarContainer {
     position: relative;
 
     width: 300px;
@@ -28,14 +27,14 @@
     border: solid white;
 }
 
-#healthBarFill_1, #healthBarFill_2{
+.healthBarFill {
     height: 100%;
     background: green;
     
     transition: width 0.5s;
 }
 
-#healthBarValue_1, #healthBarValue_2{
+.healthBarValue {
     position: absolute;
 
     width: 100%;
