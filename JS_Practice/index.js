@@ -25,14 +25,12 @@ function createPlayer(name){
     monsterHealthFill.id = name + "-monster-hp-fill";
     monsterHealthFill.className = "healthBarFill";
 
-    // attaching monster to player parent.
     player.appendChild(monsterName);
     player.appendChild(monsterHealth);
     player.appendChild(monsterDamage);
     monsterHealth.appendChild(monsterHealthVal);
     monsterHealth.appendChild(monsterHealthFill);
 
-    // attaching everything above to UI element.
     UI.appendChild(player);
     return player;
 }
@@ -43,7 +41,6 @@ function spawnMonster(player, markerPreset, monsterDetails){
     monster.setAttribute("preset", markerPreset);
     monster.setAttribute("emitevents", "true");
 
-    // Sourcing & setting orientation, scaling to the monsterModel.
     const monsterModel = document.createElement('a-obj-model');
     monsterModel.setAttribute("src", monsterDetails.model);
     monsterModel.setAttribute("position", "0 0 0");
@@ -65,7 +62,6 @@ function spawnMonster(player, markerPreset, monsterDetails){
 }
 
 function updateMonsterStatsUi(playerName, monsterDetails){
-
     document.getElementById(playerName + "-monster-name").textContent = monsterDetails.name;
     document.getElementById(playerName + "-monster-hp-value").textContent = monsterDetails.health;
     document.getElementById(playerName + "-monster-dmg").textContent = monsterDetails.damage;

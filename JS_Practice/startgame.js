@@ -1,5 +1,4 @@
 const button = document.getElementById("boxBtn");
-const indexUI = document.getElementById("UI");
 
 button.addEventListener("click", function isBoxClicked(){
   button.remove();
@@ -7,17 +6,22 @@ button.addEventListener("click", function isBoxClicked(){
 
   const playerForm = document.createElement('form');
   const playerInput = document.createElement('input');
-  playerInput.setAttribute("id", "player-name");
+
+  playerForm.setAttribute("id", "-player-form");
+  playerForm.setAttribute("onsubmit", "return false");
+  playerForm.className = "pointerEnabled";
+  
+  playerInput.setAttribute("id", "-player-name");
   playerInput.setAttribute("type", "text");
   playerInput.setAttribute("placeholder", "Your Name Here!");
-  playerForm.className = "pointerEnabled";
 
   playerForm.appendChild(playerInput);
-  indexUI.appendChild(playerForm);
+  UI.appendChild(playerForm);
 
-  console.log(playerInput);
+  playerInput.addEventListener("keypress", function (evnt){
+    if (evnt.key == "Enter") {
+      const input = document.getElementById("-player-name").value;
+      console.log(input);
+    }
+  })
 })
-
-function getInputValue(){
-  const value = document.getElementById("player-name").value;
-}
