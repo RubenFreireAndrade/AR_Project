@@ -9,7 +9,7 @@ button.addEventListener("click", function isBoxClicked(){
 
   playerForm.setAttribute("id", "-player-form");
   playerForm.setAttribute("onsubmit", "return false");
-  playerForm.className = "pointerEnabled";
+  playerForm.className = "-pointer-enabled";
   
   playerInput.setAttribute("id", "-player-name");
   playerInput.setAttribute("type", "text");
