@@ -10,8 +10,25 @@
     pointer-events: none;
 }
 
-#UI .pointerEnabled {
+#UI .-pointer-enabled {
     pointer-events: all;
+}
+
+#-button-container {
+    position: absolute;
+    top: 47%;
+    left: 0px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+
+    pointer-events: all;
+}
+
+#-start-button {
+    width: 10%;
+    height: 50px;
 }
 
 .playerStatusBar {

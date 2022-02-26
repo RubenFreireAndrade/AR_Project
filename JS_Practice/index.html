@@ -8,21 +8,18 @@
 <body style="margin : 0px; overflow: hidden;">
 
     <a-scene id="scene" embedded arjs="sourceType: webcam;">
-      <a-box id="boxBtn" position="0 0 -2" rotation="0 0 0" color="#4CC3D9" scale="0.1 0.1 0.1"></a-box>
-        
       <a-assets timeout="30000">
         <a-asset-item id="dragon" src="https://cdn.glitch.me/a8542f6b-dbd1-4ba8-8adc-497920eabe18%2FDragon%202.5_fbx.obj?v=1639323928482"></a-asset-item>
       </a-assets>
-  
-      <a-camera position="0 0 0">
-        <a-cursor></a-cursor>
-      </a-camera>
+      
+      <a-camera position="0 0 0"></a-camera>
     </a-scene>
+    <div id="-button-container"></div>
     <div id="UI"></div>
   
+  <script src="startgame.js"></script>
   <script src="monsters.js"></script>
   <script src="index.js"></script>
-  <script src="startgame.js"></script>
   <script src="battle.js"></script>
   
 </body>

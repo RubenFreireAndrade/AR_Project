@@ -13,7 +13,7 @@ function createPlayer(name){
     const monsterHealth = document.createElement('div');
     monsterHealth.id = name + "-monster-hp";
     monsterHealth.className = "healthBarContainer";
-    
+
     const monsterDamage = document.createElement('div');
     monsterDamage.id = name + "-monster-dmg";
 
