@@ -25,11 +25,11 @@ function createPlayer(name){
     monsterHealthFill.id = name + "-monster-hp-fill";
     monsterHealthFill.className = "healthBarFill";
 
+    monsterHealth.appendChild(monsterHealthVal);
+    monsterHealth.appendChild(monsterHealthFill);
     player.appendChild(monsterName);
     player.appendChild(monsterHealth);
     player.appendChild(monsterDamage);
-    monsterHealth.appendChild(monsterHealthVal);
-    monsterHealth.appendChild(monsterHealthFill);
 
     UI.appendChild(player);
     return player;
@@ -71,10 +71,7 @@ function removeMonsterStatsUi(id){
     
 }
 
-const p1 = createPlayer("PlayerOne");
-const p1Monster = MonsterLibrary.getMonsterDetails("dragon");
-const p1MonsterMarker = spawnMonster(p1, "hiro", p1Monster);
-
 const p2 = createPlayer("PlayerTwo");
 const p2Monster = MonsterLibrary.getMonsterDetails("dragon2");
 const p2MonsterMarker = spawnMonster(p2, "kanji", p2Monster);
+

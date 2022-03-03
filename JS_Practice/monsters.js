@@ -16,4 +16,8 @@ class MonsterLibrary{
     static getMonsterDetails(id) {
         return this.library[id];
     }
+
+    static getMonsterIds(){
+        return Object.keys(this.library);
+    }
 }
