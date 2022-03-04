@@ -22,9 +22,14 @@ function startGame(){
 }
 
 function createPlayerForms(){
+    //monOptions.push(MonsterLibrary.getMonsterIds());
+
     const playerForm = document.createElement('form');
     const playerInput = document.createElement('input');
     const dropDownContainer = document.createElement('div');
+    const dropDownLabel = document.createElement('label');
+    var dropDownSelect = document.createElement('select');
+    var option = document.createElement('option');
 
     playerForm.setAttribute("id", "-player-form");
     playerForm.setAttribute("onsubmit", "return false");
@@ -34,24 +39,50 @@ function createPlayerForms(){
     playerInput.setAttribute("type", "text");
     playerInput.setAttribute("placeholder", "Your Name Here!");
 
-    dropDownContainer.setAttribute("id", "-dp-container");
+    dropDownContainer.setAttribute("id", "-dd-container");
     dropDownContainer.className = "-pointer-enabled";
+
+    dropDownLabel.textContent = "Choose Your Monster!   ";
+    dropDownLabel.className = "-pointer-enabled";
+
+    dropDownSelect.setAttribute("id", "-drop-down");
+    dropDownSelect.className = "-pointer-enabled";
+    
+    option.setAttribute("id", "-option-elem");
+    option.className = "-pointer-enabled";
+    //option.textContent = monsterOptions;
 
     // 1. Create h1 title: Enter Player 1 details.
     // 2. Create monster select dropdown using MonsterLibrary.getMonsterIds().
     // 3. Instead of using eventListener create a button for text field.
 
-    // 4. if playerName field ! empty and player monster is selected. add player to battleSystem.
+    // 4. if playerName field not empty and player monster is selected. add player to battleSystem.
     // 5. reset input fields to default.
     // 6. update h1 title: enter Player 2 details.
     // 7. repeat step 4 for player 2, then start game.
 
+    dropDownSelect.appendChild(option);
+    dropDownContainer.appendChild(dropDownLabel);
+    dropDownContainer.appendChild(dropDownSelect);
     playerForm.appendChild(playerInput);
     UI.appendChild(playerForm);
+    UI.appendChild(dropDownContainer);
+
+    var monsterOptions = MonsterLibrary.getMonsterIds();
+
+    for(var key in monsterOptions){
+        var monster = monsterOptions[key];
+        dropDownSelect.options[dropDownSelect.options.length] = new Option(monster);
+    }
+
+    // for (let index = 0; index < MonsterLibrary.library.length; index++) {
+    //     const element = array[index];
+        
+    // }
 
     getPlayerInfo(playerInput);
-    // Playing around.
-    //console.log(UI.getElementsByClassName("healthBarFill"));
+    console.log(dropDownContainer);
+    console.log();
 }
 
 function getPlayerInfo(input){
