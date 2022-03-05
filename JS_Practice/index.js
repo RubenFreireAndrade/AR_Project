@@ -74,4 +74,3 @@ function removeMonsterStatsUi(id){
 const p2 = createPlayer("PlayerTwo");
 const p2Monster = MonsterLibrary.getMonsterDetails("dragon2");
 const p2MonsterMarker = spawnMonster(p2, "kanji", p2Monster);
-
