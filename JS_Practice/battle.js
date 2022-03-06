@@ -1,4 +1,3 @@
-// Possibly needed?
 class BattleSystem{
     players = [];
     constructor(){
@@ -19,11 +18,3 @@ class BattleSystem{
 const battleSystem = new BattleSystem();
 // this.players[0]
 // this.players[0].monster
-
-
-// Playing around.
-// function checking(){
-//     const health = document.getElementById("-monster-hp");
-//     console.log(health);
-// }
-// const healthFill = UI.getElementsByClassName("healthBarFill");

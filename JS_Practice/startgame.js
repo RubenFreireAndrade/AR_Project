@@ -1,10 +1,5 @@
-class Player{
-    constructor(name){
-        this.name = name;
-    }
-}
-
 const startBtnContainer = document.getElementById("-button-container");
+const backgroundForm = document.getElementById("-background-form");
 
 function startGame(){
     const startButton = document.createElement('button');
@@ -74,8 +69,9 @@ function createPlayerForms(){
     playerForm.appendChild(playerMarker);
     playerForm.appendChild(playerSubmitBtn);
     UI.appendChild(playerForm);
+    backgroundForm.appendChild(UI);
 
-    var monsterOptions = MonsterLibrary.getMonsterIds();
+    let monsterOptions = MonsterLibrary.getMonsterIds();
     for(var key in monsterOptions){
         var monster = monsterOptions[key];
         dropDownSelect.options[dropDownSelect.options.length] = new Option(monster);
@@ -83,7 +79,7 @@ function createPlayerForms(){
 }
 
 function checkInputField(){
-    console.log("YOu have pressed submit button");
+    console.log("You have pressed submit button");
     const nameField = document.forms["-player-form"]["-player-input"].value;
     const monsterField = document.forms["-player-form"]["-drop-down"].value;
     const markerField = document.forms["-player-form"]["-player-marker"].value;
@@ -104,6 +100,13 @@ function checkInputField(){
         if (markerField == "kanji") {
             // Delete player forms. Then start game.
             UI.removeChild(document.forms["-player-form"]);
+
+            let frag = document.createDocumentFragment();
+            while (backgroundForm.firstChild) {
+                frag.appendChild(backgroundForm.firstChild);
+            }
+            backgroundForm.parentNode.insertBefore(frag, backgroundForm);
+            backgroundForm.parentNode.removeChild(backgroundForm);
         }
         return true;
     }
