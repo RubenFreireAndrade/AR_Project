@@ -26,8 +26,8 @@ function createPlayerForms(){
     const playerInput = document.createElement('input');
     const playerMarker = document.createElement('input');
     const dropDownLabel = document.createElement('label');
-    var dropDownSelect = document.createElement('select');
-    var option = document.createElement('option');
+    let dropDownSelect = document.createElement('select');
+    let option = document.createElement('option');
     const playerSubmitBtn = document.createElement('button');
 
     playerForm.setAttribute("id", "-player-form");
@@ -84,24 +84,24 @@ function createPlayerForms(){
 
 function checkInputField(){
     console.log("YOu have pressed submit button");
-    var field1 = document.forms["-player-form"]["-player-input"].value;
-    var field2 = document.forms["-player-form"]["-drop-down"].value;
-    const field3 = document.forms["-player-form"]["-player-marker"].value;
-    console.log(field1, field2);
+    const nameField = document.forms["-player-form"]["-player-input"].value;
+    const monsterField = document.forms["-player-form"]["-drop-down"].value;
+    const markerField = document.forms["-player-form"]["-player-marker"].value;
+    console.log(nameField, monsterField);
     
-    if (field1 != "" && field2 != "") {
+    if (nameField != "" && monsterField != "") {
         console.log("details has been submitted");
 
-        const p1 = createPlayer(field1);
-        const p1Monster = MonsterLibrary.getMonsterDetails(field2);
-        const p1MonsterMarker = spawnMonster(p1, field3, p1Monster);
+        const p1 = createPlayer(nameField);
+        const p1Monster = MonsterLibrary.getMonsterDetails(monsterField);
+        const p1MonsterMarker = spawnMonster(p1, markerField, p1Monster);
 
         battleSystem.addPlayer(p1, p1Monster, p1MonsterMarker);
 
         document.forms.namedItem("-player-form").reset();
         document.forms["-player-form"]["-player-marker"].value = "kanji";
 
-        if (field3 == "kanji") {
+        if (markerField == "kanji") {
             // Delete player forms. Then start game.
             UI.removeChild(document.forms["-player-form"]);
         }
