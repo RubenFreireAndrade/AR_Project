@@ -24,6 +24,7 @@ function createPlayerForms(){
     let dropDownSelect = document.createElement('select');
     let option = document.createElement('option');
     const playerSubmitBtn = document.createElement('button');
+    let playerIndicator = document.createElement('h1');
 
     playerForm.setAttribute("id", "-player-form");
     playerForm.setAttribute("onsubmit", "return false");
@@ -51,6 +52,9 @@ function createPlayerForms(){
     playerSubmitBtn.textContent = "Submit";
     playerSubmitBtn.className = "-pointer-enabled";
 
+    playerIndicator.setAttribute("id", "-h1");
+    playerIndicator.textContent = "Player 1:";
+
     // 1. Create h1 title: Enter Player 1 details.
     // 2. Create monster select dropdown using MonsterLibrary.getMonsterIds().
     // 3. Instead of using eventListener create a button for text field.
@@ -63,6 +67,7 @@ function createPlayerForms(){
     // 8. add background image to UI while in player forms.
 
     dropDownSelect.appendChild(option);
+    playerForm.appendChild(playerIndicator);
     playerForm.appendChild(playerInput);
     playerForm.appendChild(dropDownLabel);
     playerForm.appendChild(dropDownSelect);
@@ -95,10 +100,12 @@ function checkInputField(){
         battleSystem.addPlayer(p1, p1Monster, p1MonsterMarker);
 
         document.forms.namedItem("-player-form").reset();
+
+        let indicator = document.getElementById("-h1");
+        indicator.textContent = "Player 2:";
         document.forms["-player-form"]["-player-marker"].value = "kanji";
 
         if (markerField == "kanji") {
-            // Delete player forms. Then start game.
             UI.removeChild(document.forms["-player-form"]);
 
             let frag = document.createDocumentFragment();
