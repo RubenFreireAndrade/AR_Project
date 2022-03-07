@@ -98,7 +98,7 @@ function checkInputField(){
         const p1MonsterMarker = spawnMonster(p1, markerField, p1Monster);
 
         battleSystem.addPlayer(p1, p1Monster, p1MonsterMarker);
-
+        
         document.forms.namedItem("-player-form").reset();
 
         let indicator = document.getElementById("-h1");
