@@ -7,7 +7,7 @@
 
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
 
     pointer-events: none;
 }
@@ -33,7 +33,7 @@
     height: 50px;
 }
 
-#-background-form{
+#-background-form {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -46,6 +46,11 @@
 
     pointer-events: none;
     background-color: #00a6ff;
+}
+
+#-dp-label {
+    font-family: Impact, Haettenschweiler, sans-serif;
+    color: black;
 }
 
 .playerStatusBar {

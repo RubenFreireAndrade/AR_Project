@@ -10,7 +10,10 @@ class Monster {
 class MonsterLibrary{
     static library = {
         dragon: new Monster("Dragon", 100, 10, "#dragon"),
-        dragon2: new Monster("Dragon2", 200, 30, "#dragon")
+        dragon2: new Monster("Dragon2", 200, 10, "#dragon"),
+        penguin: new Monster("Penguin", 100, 10, "#penguin"),
+        golem: new Monster("Golem", 100, 10, "#golem"),
+        humanoid: new Monster("Humanoid", 100, 10, "#humanoid")
     }
 
     static getMonsterDetails(id) {

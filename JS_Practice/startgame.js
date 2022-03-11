@@ -39,6 +39,7 @@ function createPlayerForms(){
     playerMarker.hidden = true;
     playerMarker.value = "hiro";
 
+    dropDownLabel.setAttribute("id", "-dp-label");
     dropDownLabel.textContent = "Choose Your Monster!";
     dropDownLabel.className = "-pointer-enabled";
 
@@ -54,17 +55,6 @@ function createPlayerForms(){
 
     playerIndicator.setAttribute("id", "-h1");
     playerIndicator.textContent = "Player 1:";
-
-    // 1. Create h1 title: Enter Player 1 details.
-    // 2. Create monster select dropdown using MonsterLibrary.getMonsterIds().
-    // 3. Instead of using eventListener create a button for text field.
-
-    // 4. if playerName field not empty and player monster is selected.
-    // add player to battleSystem.
-    // 5. reset input fields to default.
-    // 6. update h1 title: enter Player 2 details.
-    // 7. repeat step 4 for player 2, then start game.
-    // 8. add background image to UI while in player forms.
 
     dropDownSelect.appendChild(option);
     playerForm.appendChild(playerIndicator);
